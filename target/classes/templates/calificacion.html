@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Calificación</title>
+    <link rel="stylesheet" href="/css/calificacion.css">
+</head>
+<body>
+<input type="hidden" name="hotelId" value="${hotel.id}">
+
+<div th:include="fragments/index.html"></div>
+<div class="container">
+    <h2 th:text="'Calificación Hotel ' + ${hotel.nombre}"></h2>
+    <img class="hotel-image" th:src="@{/images/hotel.png}" alt="Imagen del Hotel">
+</div>
+
+<form action="/guardar-calificacion" method="POST" class="container form-container">
+    <!-- Hidden field para pasar el ID del hotel -->
+    <input type="hidden" name="hotelId" th:value="${hotel.id}">
+
+    <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required class="input-field">
+    </div>
+
+    <div class="input-group">
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" class="input-field"></textarea>
+    </div>
+
+    <div class="input-group">
+        <label for="puntaje">Calificación:</label>
+        <div id="puntaje" class="rating">
+            <!-- Aquí generamos los 5 botones para la calificación -->
+            <label for="puntaje"><input type="radio" id="calificacion1" name="puntaje" value="1"> 1</label>
+            <label for="puntaje"><input type="radio" id="calificacion2" name="puntaje" value="2"> 2</label>
+            <label for="puntaje"><input type="radio" id="calificacion3" name="puntaje" value="3"> 3</label>
+            <label for="puntaje"><input type="radio" id="calificacion4" name="puntaje" value="4"> 4</label>
+            <label for="puntaje"><input type="radio" id="calificacion5" name="puntaje" value="5"> 5</label>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button type="submit" class="apply-button">Aplicar</button>
+        <button type="button" onclick="window.location.href='/'" class="cancel-button">Cancelar</button>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones de Hoteles</title>
+    <link rel="stylesheet" href="/css/view.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div th:include="fragments/index.html"></div>
+
+<div class="search-top-container">
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+        <form action="/buscar" method="GET">
+            <label for="search">Nombre:</label>
+            <input type="text" id="search" name="keyword">
+            <button type="submit" id="search-button">Buscar</button>
+        </form>
+
+    </div>
+
+    <!-- Botón Top 3 -->
+    <div class="top3-container">
+        <form action="/" method="GET" class="top3-button">
+            <button type="submit" id="top3-button">
+                <img src="/images/top3.png" alt="Top 3">
+            </button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!-- Lista de hoteles -->
+<div class="hotel-list">
+    <div class="list-header">
+        <div class="header-item">Hotel</div>
+        <div class="header-item">Calificación Promedio</div>
+        <div class="header-item">Agregar</div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="hotel-item" th:each="hotel : ${hoteles}">
+        <div class="hotel-info">
+            <img th:src="@{/images/hotel.png}" alt="Hotel Image">
+            <span th:text="${hotel.nombre}"></span>
+        </div>
+        <div class="calificacion-info">
+            <!-- Mostrar la calificación promedio -->
+            <span class="calificacion" th:text="${hotel.calificacion()}" th:title="${hotel.calificacionesToString()}"></span>
+        </div>
+        <div class="add-button">
+            <a th:href="@{/calificacion/{hotelId}(hotelId=${hotel.id})}">Agregar</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+

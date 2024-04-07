@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .logo img {
+    height: 40px;
+}
+
+.menu .titulo {
+    font-size: 1.5rem;
+}
+
+.menu .telefono {
+    font-size: 1.2rem;
+}
+
+/* Estilos para la barra de búsqueda */
+
+.search-bar {
+    margin: 20px 0;
+}
+
+.search-bar label {
+    margin-right: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la lista de hoteles */
+
+.hotel-list {
+    margin-top: 20px;
+}
+
+.list-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+}
+
+.header-item {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hotel-item {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.hotel-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.hotel-info img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.calificacion-info,
+.add-button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    font-weight: bold;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.calificacion:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.search-top-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    margin-right: 10px;
+}
+
+.top3-button {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.top3-button img {
+    height: 40px;
+}
+
